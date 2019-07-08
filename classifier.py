@@ -65,13 +65,17 @@ train_generator = train_datagen.flow_from_directory(
     train_data_dir, 
     target_size=(img_width, img_height), 
     batch_size=batch_size, 
-    class_mode='binary') 
-  
+    class_mode='binary', 
+    classes=['bad', 'good']) 
+
+print(train_generator.class_indices)
+
 validation_generator = test_datagen.flow_from_directory( 
     validation_data_dir, 
     target_size=(img_width, img_height), 
     batch_size=batch_size, 
-    class_mode='binary') 
+    class_mode='binary', 
+    classes=['bad', 'good']) 
   
 model.fit_generator( 
     train_generator, 
@@ -81,3 +85,6 @@ model.fit_generator(
     validation_steps=nb_validation_samples // batch_size) 
 
 model.save_weights('teeth_classifier.h5') 
+
+image.load_img()
+model.predict
