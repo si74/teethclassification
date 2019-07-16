@@ -1,8 +1,10 @@
+from keras.preprocessing import image
 from keras.preprocessing.image import ImageDataGenerator
 from keras.models import Sequential
 from keras.layers import Conv2D, MaxPooling2D
 from keras.layers import Activation, Dropout, Flatten, Dense
 from keras import backend as K
+import numpy as np
 
 # Training data directory
 train_data_dir = 'training_images'
@@ -86,5 +88,13 @@ model.fit_generator(
 
 model.save_weights('teeth_classifier.h5') 
 
-image.load_img()
-model.predict
+test_image_dir_path = 'C:/Users/nico/teethclassification/test_images/bad/'
+test_image = []
+img = image.load_img(test_image_dir_path + 'test_' + str(1) + '.jpg', target_size= (img_width, img_height))
+img = image.img_to_array(img)
+img = img/255
+test_image.append(img)
+test = np.array(test_image)
+prediction = model.predict_classes(test)
+print("predictions: ")
+print(prediction)
