@@ -4,6 +4,13 @@ Using keras and CNNs to classify teeth.
 ## Background
 
 ## The problem
+Use Neural Networks to detect teeth before and after orthodontics.
+
+## Results
+Our script prints 0 if the picture was taken before braces and prints 1 if the picture was taken after braces. We found that our classifier needs more training data to perform with higher accuracy. 
+
+## Next steps
+Add more training images. 
 
 ## Setup && Installation
 
@@ -41,6 +48,13 @@ $ pipenv install tensorflow --python /usr/local/var/pyenv/shims/python
 ```
 
 # Windows
+
+Ensure that you have a version of python 3.6.x.
+1. Install keras and tensorflow.
+```
+$ pip uninstall protobuf
+$ pip install protobuf==3.6.0
+```
 
 ## Resources
 
