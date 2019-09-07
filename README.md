@@ -49,8 +49,9 @@ $ pipenv install tensorflow --python /usr/local/var/pyenv/shims/python
 
 # Windows
 
-Ensure that you have a version of python 3.6.x.
+Ensure that you have a version of python 3.6.x (64bit).
 1. Install keras and tensorflow.
+2. Uninstall protobuf and install protobuf==3.6.0
 ```
 $ pip uninstall protobuf
 $ pip install protobuf==3.6.0
